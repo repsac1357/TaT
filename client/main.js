@@ -2,7 +2,7 @@ let counter = 0
 const log = console.log
 //get the elements that we need to put the checked boxes in
 let allBoxes = document.querySelectorAll(".feedback-box");
-let feedbackbox = document.querySelector("#feedback-positive");
+let feedbackbox = document.querySelector("#feedback");
 
 //add event listener to all checkboxes, on a click go to the function checkAllBoxes()
 for (let i = 0; i < allBoxes.length; i++) {
@@ -33,33 +33,35 @@ window.addEventListener("load", () => {
 })
 
 //if the next button is clicked
-function next(e) {
-     //get the section where the button is clicked.
-     let clickedElement = e.target.parentElement.parentElement;
-     //loop through all the sections and find the one that is clicked.
-     for (let i = 0; i < sectionBoxes.length; i++) {
-          if (sectionBoxes[i] == clickedElement) {
-               //make the next one visable. 
-               clickedElement.style.display = 'none';
-               sectionBoxes[i + 1].style.display = 'block';
-          }
-     }
-}
 
-//if the previous button is clicked
-function previous(e) {
-     //get the section where the button is clicked.
-     let clickedElement = e.target.parentElement.parentElement;
-     //loop through all the sections and find the one that is clicked.
-     for (let i = 0; i < sectionBoxes.length; i++) {
-          if (sectionBoxes[i] == clickedElement) {
-               //make the previous one visable. 
-               clickedElement.style.display = 'none';
-               sectionBoxes[i - 1].style.display = 'block';
+// function next(e) {
+//      get the section where the button is clicked.
+//      let clickedElement = e.target.parentElement.parentElement;
+//      loop through all the sections and find the one that is clicked.
+//      for (let i = 0; i < sectionBoxes.length; i++) {
+//           if (sectionBoxes[i] == clickedElement) {
+//                make the next one visable. 
+//                clickedElement.style.display = 'none';
+//                sectionBoxes[i + 1].style.display = 'block';
+//           }
+//      }
+// }
 
-          }
-     }
-}
+// //if the previous button is clicked
+
+// function previous(e) {
+//      get the section where the button is clicked.
+//      let clickedElement = e.target.parentElement.parentElement;
+//      loop through all the sections and find the one that is clicked.
+//      for (let i = 0; i < sectionBoxes.length; i++) {
+//           if (sectionBoxes[i] == clickedElement) {
+//                make the previous one visable. 
+//                clickedElement.style.display = 'none';
+//                sectionBoxes[i - 1].style.display = 'block';
+
+//           }
+//      }
+// }
 
 function checkAllBoxes() {
      //make variable that's going to hold the values of the boxes.
@@ -106,7 +108,7 @@ function createFormDiv(){
      const mailSection = document.querySelector('#mail-input-section')
      const mailInput = document.createElement('input')
      mailInput.setAttribute('placeholder', 'mail')
-     const dataRight = document.querySelector('#feedback-positive')
+     const dataRight = document.querySelector('#feedback')
      const dataWrong = document.querySelector('#feedback-negative')
      mailSection.appendChild(mailInput)
      const confirmbutton = document.createElement('input')
